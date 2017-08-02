@@ -1,5 +1,5 @@
 
-function getValues(letter) {
+function getIntValues(letter) {
   var numeralValues = {
     'I': 1,
     'V': 5,
@@ -15,12 +15,16 @@ function getValues(letter) {
   }
 }
 
-function romanConverter(numeral) {
+function intToRomanConverter(integer) {
+
+}
+
+function romanToIntConverter(numeral) {
   var sum = 0;
   number_array = [];
   var numeral_array = numeral.split('');
   numeral_array.map(function (element) {
-    return number_array.push(getValues(element));
+    return number_array.push(getIntValues(element));
   });
   number_array.map(function (element, index) {
     if (number_array[index+1] > element) {
@@ -31,6 +35,14 @@ function romanConverter(numeral) {
   });
 
   return sum;
+}
+
+function romanConverter(value) {
+  if (isNaN(value)) {
+    return romanToIntConverter(value);
+  } else {
+    return intToRomanConverter(value);
+  }
 }
 
 module.exports = romanConverter;
