@@ -9,10 +9,16 @@ test('recognizes basic numeral values', () => {
   expect(romanConverter('M')).toBe(1000);
 });
 
-
 test('recognizes basic addition', () => {
   expect(romanConverter('III')).toBe(3);
   expect(romanConverter('VI')).toBe(6);
   expect(romanConverter('XV')).toBe(15);
   expect(romanConverter('MCLX')).toBe(1160);
+});
+
+test('recognizes basic subtraction', () => {
+  expect(romanConverter('IV')).toBe(4);
+  expect(romanConverter('IX')).toBe(9);
+  expect(romanConverter('CM')).toBe(900);
+  expect(romanConverter('MXC')).toBe(1090);
 });

@@ -13,9 +13,17 @@ function getValues(letter) {
 
 function romanConverter(numeral) {
   var sum = 0;
+  number_array = []
   var numeral_array = numeral.split('');
   numeral_array.map(function (element) {
-    return sum += getValues(element);
+    return number_array.push(getValues(element));
+  });
+  number_array.map(function (element, index) {
+    if (number_array[index+1] > element) {
+      sum -= element;
+    } else {
+      sum += element
+    }
   });
 
   return sum;
