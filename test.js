@@ -22,3 +22,7 @@ test('recognizes basic subtraction', () => {
   expect(romanConverter('CM')).toBe(900);
   expect(romanConverter('MXC')).toBe(1090);
 });
+
+test('recognizes invalid roman numeral', () => {
+  expect(() => romanConverter('AAA')).toThrowError('That is not a valid Roman Numeral');
+});

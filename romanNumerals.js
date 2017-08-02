@@ -8,12 +8,16 @@ function getValues(letter) {
     'C': 100,
     'M': 1000
   };
-  return numeralValues[letter];
+  if (numeralValues[letter]) {
+    return numeralValues[letter];
+  } else {
+    throw new Error('That is not a valid Roman Numeral');
+  }
 }
 
 function romanConverter(numeral) {
   var sum = 0;
-  number_array = []
+  number_array = [];
   var numeral_array = numeral.split('');
   numeral_array.map(function (element) {
     return number_array.push(getValues(element));
@@ -28,4 +32,5 @@ function romanConverter(numeral) {
 
   return sum;
 }
+
 module.exports = romanConverter;
