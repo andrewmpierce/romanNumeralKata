@@ -26,3 +26,20 @@ test('recognizes basic subtraction', () => {
 test('recognizes invalid roman numeral', () => {
   expect(() => romanConverter('AAA')).toThrowError('That is not a valid Roman Numeral');
 });
+
+test('basic int to roman conversion', () => {
+  expect(romanConverter(1)).toBe('I');
+  expect(romanConverter(5)).toBe('V');
+  expect(romanConverter(10)).toBe('X');
+  expect(romanConverter(50)).toBe('L');
+  expect(romanConverter(100)).toBe('C');
+  expect(romanConverter(1000)).toBe('M');
+
+});
+
+test('stacking int to roman conversion', () => {
+  expect(romanConverter(11)).toBe('XI');
+  expect(romanConverter(8)).toBe('VIII');
+  expect(romanConverter(110)).toBe('CX');
+
+});

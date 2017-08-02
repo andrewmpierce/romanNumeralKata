@@ -15,8 +15,33 @@ function getIntValues(letter) {
   }
 }
 
-function intToRomanConverter(integer) {
+function getRomanValues(integer) {
+  var romanValues = {
+    1: 'I',
+    5: 'V',
+    10: 'X',
+    50: 'L',
+    100: 'C',
+    1000: 'M'
+  };
+  if (romanValues[integer]) {
+    return romanValues[integer];
+  } else {
+    throw new Error('That is not a valid Roman Numeral');
+  }
+}
 
+function intToRomanConverter(integer) {
+  var romanInts = [1000, 100, 50, 10, 5, 1];
+  var romanValues = [];
+  romanInts.map(function (element) {
+    if (integer/element >= 1) {
+      var answer = Math.trunc(integer/element);
+      integer -= answer * element;
+      romanValues.push(getRomanValues(element).repeat(answer));
+    }
+  });
+  return romanValues.toString().replace( /,/g, "" );
 }
 
 function romanToIntConverter(numeral) {
