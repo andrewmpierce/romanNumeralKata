@@ -1,0 +1,14 @@
+{
+  "name": "roman_nums",
+  "version": "1.0.0",
+  "description": "",
+  "main": "romanNumerals.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Andrew Pierce",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^20.0.4"
+  }
+}
