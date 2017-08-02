@@ -12,7 +12,12 @@ function getValues(letter) {
 }
 
 function romanConverter(numeral) {
+  var sum = 0;
+  var numeral_array = numeral.split('');
+  numeral_array.map(function (element) {
+    return sum += getValues(element);
+  });
 
-  return getValues(numeral);
+  return sum;
 }
 module.exports = romanConverter;
